@@ -1,0 +1,14 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
+  <Bundle Name="SampleBundle" Manufacturer="TODO Manufacturer" Version="1.0.0.0" UpgradeCode="db08e96f-4cf7-4536-8262-1baf0a3df739">
+    <BootstrapperApplication>
+      <bal:WixStandardBootstrapperApplication LicenseUrl="https://www.example.com/license" Theme="hyperlinkLicense" />
+    </BootstrapperApplication>
+
+    <Chain>
+		<MsiPackage Name="SamplePackage.msi">
+			<MsiProperty Name="INSTALLFOLDER" Value="[InstallFolder]"/>
+		</MsiPackage>
+    </Chain>
+
+  </Bundle>
+</Wix>

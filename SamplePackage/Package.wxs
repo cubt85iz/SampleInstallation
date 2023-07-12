@@ -1,0 +1,17 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="SamplePackage" Manufacturer="TODO Manufacturer" Version="1.0.0.0" UpgradeCode="26d263f9-a3c3-44ff-9b9f-ded5a4ae3e2d">
+    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+
+	  <Binary Id="SampleCA" SourceFile="SampleCA.CA.dll"/>
+
+	  <CustomAction Id="CustomAction1" BinaryRef="SampleCA" DllEntry="CustomAction1"/>
+
+    <Feature Id="Main">
+      <ComponentGroupRef Id="ExampleComponents" />
+    </Feature>
+
+	  <InstallExecuteSequence>
+		  <Custom Action="CustomAction1" Before="InstallExecute" Condition="NOT Installed"/>
+	  </InstallExecuteSequence>
+  </Package>
+</Wix>

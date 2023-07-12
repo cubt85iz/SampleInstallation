@@ -1,0 +1,6 @@
+*/bin
+*/obj
+.vs
+sandbox.wsb
+sandbox-install.cmd
+sandbox-uninstall.cmd
